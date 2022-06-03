@@ -1,0 +1,25 @@
+/* .submit-form {
+  max-width: 400px;
+  margin: auto;
+} */
+.card {
+  padding: 2rem;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top:2rem;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+.category{
+  padding-left: 15%;
+  padding-right: 15%;
+  display: flex;
+   align-items: center;
+    justify-content: space-between;
+}
+.footer{
+  display: flex;
+   align-items: center;
+    justify-content: space-between;
+}

@@ -1,0 +1,79 @@
+<p-toast></p-toast>
+
+<div class="p-fluid grid card">
+  <div class="field col-12 md:col-4">
+    <span class="p-float-label">
+      <input type="text" pInputText id="name" [(ngModel)]="product.name" required autofocus />   
+      <label for="name">Name</label>
+      <small class="p-error" *ngIf="submitted && !product.name">Name is required.</small>
+    </span>
+  </div>
+<br/><br/>
+  <div class="field col-12 md:col-4">
+    <span class="p-float-label">
+      <textarea id="description" pInputTextarea [(ngModel)]="product.description" required rows="3" cols="20"></textarea>
+      <label for="name">Description</label>
+      <small class="p-error" *ngIf="submitted && !product.description">description is required.</small>
+    </span>
+  </div>
+  <br/><br/>
+  <div class="field col-12 md:col-4">
+    <span class="p-float-label">
+      <input id="description" pInputText [(ngModel)]="product.image" required  />
+      <label for="name">Image name</label>
+      <small class="p-error" *ngIf="submitted && !product.image">Image is required.</small>
+    </span>
+  </div>
+  <br/>
+  <label for="name">rating</label><br/><br/>
+  <p-rating [ngModel]="rating"  [cancel]="false"></p-rating>
+  <br/>
+  <div class="field col-12 md:col-4">
+    <span class="p-float-label">
+      <label for="inventoryStatus">Inventory Status</label>
+      <p-dropdown [(ngModel)]="product.inventoryStatus" inputId="inventoryStatus" [options]="statuses" placeholder="Select">
+          <ng-template let-option pTemplate="item">
+              <span [class]="'product-badge status-' + option.value">{{option.label}}</span>
+          </ng-template>
+      </p-dropdown> 
+    </span>
+  </div>
+  <br/>
+  <label class="">Category</label>
+      <div class="formgrid grid category">
+          <div class="field-radiobutton col-6">
+              <p-radioButton id="category1" name="category" value="Accessories" [(ngModel)]="product.category"></p-radioButton>
+              <label for="category1">Accessories</label>
+          </div>
+          <div class="field-radiobutton col-6">
+              <p-radioButton id="category2" name="category" value="Clothing" [(ngModel)]="product.category"></p-radioButton>
+              <label for="category2">Clothing</label>
+          </div>
+          <div class="field-radiobutton col-6">
+              <p-radioButton id="category3" name="category" value="Electronics" [(ngModel)]="product.category"></p-radioButton>
+              <label for="category3">Electronics</label>
+          </div>
+          <div class="field-radiobutton col-6">
+              <p-radioButton id="category4" name="category" value="Fitness" [(ngModel)]="product.category"></p-radioButton>
+              <label for="category4">Fitness</label>
+          </div>
+      </div>
+      <br/><br/>
+  <div class="field col-12 md:col-4">
+    
+      <label for="price">Price</label>
+      <p-inputNumber id="price" [(ngModel)]="product.price" mode="currency" currency="USD" locale="en-US"></p-inputNumber>
+    
+  </div>
+  <div class="field col-12 md:col-4">
+    
+        <label for="quantity">Quantity</label>
+          <p-inputNumber id="quantity" [(ngModel)]="product.quantity"></p-inputNumber>
+    
+  </div>
+<div class="footer">
+  <button pButton pRipple label="Cancel"  class="p-button-text" (click)="hideDialog()"></button>
+  <button pButton pRipple label="Save"  class="p-button-text" (click)="saveProduct()"></button>
+</div>
+ 
+</div>
